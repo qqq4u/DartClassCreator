@@ -1,0 +1,16 @@
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\bin\Debug\net5.0-windows\FlutterClassCreator.exe
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\bin\Debug\net5.0-windows\FlutterClassCreator.deps.json
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\bin\Debug\net5.0-windows\FlutterClassCreator.runtimeconfig.json
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\bin\Debug\net5.0-windows\FlutterClassCreator.runtimeconfig.dev.json
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\bin\Debug\net5.0-windows\FlutterClassCreator.dll
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\bin\Debug\net5.0-windows\ref\FlutterClassCreator.dll
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\bin\Debug\net5.0-windows\FlutterClassCreator.pdb
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\obj\Debug\net5.0-windows\FlutterClassCreator.csprojAssemblyReference.cache
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\obj\Debug\net5.0-windows\FlutterClassCreator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\obj\Debug\net5.0-windows\FlutterClassCreator.AssemblyInfoInputs.cache
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\obj\Debug\net5.0-windows\FlutterClassCreator.AssemblyInfo.cs
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\obj\Debug\net5.0-windows\FlutterClassCreator.csproj.CoreCompileInputs.cache
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\obj\Debug\net5.0-windows\FlutterClassCreator.dll
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\obj\Debug\net5.0-windows\ref\FlutterClassCreator.dll
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\obj\Debug\net5.0-windows\FlutterClassCreator.pdb
+C:\Users\Lemeshov\RiderProjects\FlutterClassCreator\FlutterClassCreator\obj\Debug\net5.0-windows\FlutterClassCreator.genruntimeconfig.cache
