@@ -18,7 +18,7 @@ namespace DartClassCreator
             public string Name;
         }
 
-        private List<string> defaultTypes = new List<string>() {"int", "double", "String", "bool", "num"};
+        private List<string> defaultTypes = new List<string>() {"int", "double", "String", "bool"};
 
         private List<Field> ParseFields(string[] fieldsStr)
         {
@@ -94,7 +94,7 @@ namespace DartClassCreator
         private string GenerateFromJson(string className, List<Field> fields)
         {
             return $"\treturn {className}(\n" +
-                   $"\t\t{string.Join(",\n\t\t", fields.Select(f => { if (checkList(f)) { return GenerateListFieldFromJson(f); } else if (checkComplexField(f)) { return GenerateComplexFieldFromJson(f); } else { if (f.Type == "num") { return $"{f.Name}: (json[\'{f.Name}\'] as num).toDouble"; } } return $"{f.Name}: json['{f.Name}'] as {f.Type}"; }))}\n" +
+                   $"\t\t{string.Join(",\n\t\t", fields.Select(f => { if (checkList(f)) { return GenerateListFieldFromJson(f); } else if (checkComplexField(f)) { return GenerateComplexFieldFromJson(f); } else { if (f.Type == "double") { return $"{f.Name}: (json[\'{f.Name}\'] as num).toDouble"; } } return $"{f.Name}: json['{f.Name}'] as {f.Type}"; }))}\n" +
                    $"\t\t);\n";
         }
 
