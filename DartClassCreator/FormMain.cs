@@ -18,6 +18,7 @@ namespace DartClassCreator
             public string Name;
         }
 
+        private List<string> defaultTypes = new List<string>() {"int", "double", "String", "bool", "num"};
 
         private List<Field> ParseFields(string[] fieldsStr)
         {
@@ -59,12 +60,44 @@ namespace DartClassCreator
                    $"\t}})";
         }
 
+        //name type
+        //coords LatLng 
+        //offices List<Office>
+
+
+        private bool checkList(Field field)
+        {
+            return field.Type.Contains("List");
+        }
+
+        private bool checkComplexField(Field field)
+        {
+            return !defaultTypes.Exists(dt => dt == field.Type);
+        }
+
+        private string GetListType(Field field)
+        {
+            return field.Type.Replace("List<", "").Trim('>');
+        }
+
+        private string GenerateComplexFieldFromJson(Field field)
+        {
+            return $"{field.Name}: {field.Type}.FromJson(json[\'{field.Name}\'] as Map<String, dynamic>)";
+        }
+
+        private string GenerateListFieldFromJson(Field field)
+        {
+            return
+                $"{field.Name}: (json[\'{field.Name}\'] as List<dinamic>).map((e)=> {GetListType(field)}.fromJson(e as Map<String, dynamic>)).toList()";
+        }
+
         private string GenerateFromJson(string className, List<Field> fields)
         {
             return $"\treturn {className}(\n" +
-                   $"\t\t{string.Join(",\n\t\t", fields.Select(f => $"{f.Name}: json['{f.Name}'] as {f.Type}"))}\n" +
+                   $"\t\t{string.Join(",\n\t\t", fields.Select(f => { if (checkList(f)) { return GenerateListFieldFromJson(f); } else if (checkComplexField(f)) { return GenerateComplexFieldFromJson(f); } else { if (f.Type == "num") { return $"{f.Name}: (json[\'{f.Name}\'] as num).toDouble"; } } return $"{f.Name}: json['{f.Name}'] as {f.Type}"; }))}\n" +
                    $"\t\t);\n";
         }
+
 
         private string GenerateToJson(List<Field> fields)
         {
@@ -75,7 +108,7 @@ namespace DartClassCreator
 
         private string GenerateFinalFields(List<Field> fields)
         {
-            return $"{string.Join(";\n", fields.Select(f => $"final {f.Type} {f.Name}"))}";
+            return $"{string.Join(";\n", fields.Select(f => $"final {(f.Type=="num" ? "double" : f.Type)} {f.Name}"))}";
         }
 
         private string GenerateCode(string className, List<Field> fields)
@@ -90,7 +123,7 @@ namespace DartClassCreator
                 $"\t}}\n\n" +
                 $"Map<String, dynamic> toJson() => <String, dynamic>" +
                 $"{GenerateToJson(fields)}\n\n" +
-                $"{GenerateFinalFields(fields)}\n" +
+                $"{GenerateFinalFields(fields)};\n" +
                 $"}}";
             return result;
         }
